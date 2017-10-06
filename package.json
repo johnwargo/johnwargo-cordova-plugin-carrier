@@ -1,6 +1,6 @@
 {
   "name": "johnwargo-cordova-plugin-carrier",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Cordova Plugin for retrieving Wireless Carrier information.",
   "cordova": {
     "id": "com.johnwargo.carrier",
