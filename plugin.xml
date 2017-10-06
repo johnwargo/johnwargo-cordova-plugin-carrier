@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<plugin id="com.johnwargo.carrier" version="0.0.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>carrier</name>
+  <description>A Cordova Plugin for retrieving Wireless Carrier information.</description>
+  <author>John M. Wargo</author>
+  <keywords>carrier,telephony</keywords>
+  <info>
+    This is a sample plugin from Apache Cordova 4 Programming by John M. Wargo
+    
+    Learn more about the publication at www.cordova4programming.com.
+  </info>
+  <js-module name="carrier" src="www/carrier.js">
+    <clobbers target="carrier" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="carrier">
+        <param name="android-package" value="com.johnwargo.carrier.carrier" />
+      </feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml" />
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    </config-file>
+    <source-file src="src/android/carrier.java" target-dir="src/com/johnwargo/carrier" />
+  </platform>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="carrier">
+        <param name="ios-package" value="carrier" />
+      </feature>
+    </config-file>
+    <source-file src="src/ios/carrier.m" />
+    <framework src="CoreTelephony.framework" />
+  </platform>
+</plugin>
